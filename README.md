@@ -34,4 +34,30 @@ Maintainability
 - NFR8: Good naming conventions.
 Portability
 - NFR9: Runs on Python 3.10+.
-  
+4.CASE DIAGRAM
+  %%{init: { 'theme': 'base', 'themeVariables': {} }}%%
+usecaseDiagram
+    actor Staff as S
+    actor Admin as A
+
+    S --> (View Available Rooms)
+    S --> (Check In Customer)
+    S --> (Check Out Customer)
+
+    A --> (Add Room)
+    A --> (Remove Room)
+    A --> (View Available Rooms)
+5. ER DIAGRAM
+erDiagram
+    ROOM {
+        int room_no PK
+        string type
+        int price
+        bool booked
+    }
+    CUSTOMER {
+        string name
+        string phone
+        int days
+    }
+    ROOM ||--o{ CUSTOMER : "has"
